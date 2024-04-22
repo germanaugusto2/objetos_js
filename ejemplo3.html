@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Fecha de Nacimiento</title>
+</head>
+<body>
+    <h1>Validar Fecha de Nacimiento</h1>
+    <form onsubmit="return validarFecha()">
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" required>
+        <button type="submit">Validar</button>
+    </form>
+
+    <script>
+        function validarFecha() {
+            var fechaIngresada = new Date(document.getElementById('fechaNacimiento').value);
+
+            if (isNaN(fechaIngresada.getTime())) {
+                alert("Por favor, ingrese una fecha de nacimiento válida.");
+                return false;
+            }
+
+            alert("La fecha de nacimiento ingresada es: " + fechaIngresada.toDateString());
+            return true;
+        }
+    </script>
+</body>
+</html>
