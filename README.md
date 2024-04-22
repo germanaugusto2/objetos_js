@@ -66,40 +66,6 @@ fechaActual.setFullYear(2025); // Establecer el año a 2025
     - Sincronización temporal: En aplicaciones que requieren sincronización con el tiempo del sistema o eventos específicos, el objeto Date te permite realizar acciones basadas en el tiempo, como activar funciones en momentos específicos o sincronizar animaciones y efectos visuales.
     - Registro de eventos: Para aplicaciones que necesitan rastrear y registrar eventos en el tiempo, como registros de actividad, transacciones financieras o actualizaciones de estado, el objeto Date te permite capturar y almacenar la fecha y hora en que ocurrieron esos eventos.
 
-## Ejemplo basico
-
-```Javascript
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validar Fecha</title>
-</head>
-<body>
-    <h1>Validar Fecha</h1>
-    <form onsubmit="return validarFecha()">
-        <label for="fecha">Ingrese una fecha:</label>
-        <input type="date" id="fecha" required>
-        <button type="submit">Validar</button>
-    </form>
-
-    <script>
-        function validarFecha() {
-            var fechaIngresada = new Date(document.getElementById('fecha').value);
-
-            if (isNaN(fechaIngresada.getTime())) {
-                alert("Por favor, ingrese una fecha válida.");
-                return false;
-            }
-
-            alert("La fecha ingresada es: " + fechaIngresada.toDateString());
-            return true;
-        }
-    </script>
-</body>
-</html>
-```
 
 ## Propiedades 
 
