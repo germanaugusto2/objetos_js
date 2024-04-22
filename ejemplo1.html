@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Fecha de Entrega de Pedido</title>
+</head>
+<body>
+    <h1>Validar Fecha de Entrega de Pedido</h1>
+    <form onsubmit="return validarFecha()">
+        <label for="fechaEntrega">Fecha de Entrega:</label>
+        <input type="date" id="fechaEntrega" required>
+        <button type="submit">Validar</button>
+    </form>
+
+    <script>
+        function validarFecha() {
+            var fechaIngresada = new Date(document.getElementById('fechaEntrega').value);
+
+            if (isNaN(fechaIngresada.getTime())) {
+                alert("Por favor, ingrese una fecha de entrega de pedido válida.");
+                return false;
+            }
+
+            alert("La fecha de entrega de pedido ingresada es: " + fechaIngresada.toDateString());
+            return true;
+        }
+    </script>
+</body>
+</html>

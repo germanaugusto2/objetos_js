@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validar Fecha de Inicio de Evento</title>
+</head>
+<body>
+    <h1>Validar Fecha de Inicio de Evento</h1>
+    <form onsubmit="return validarFecha()">
+        <label for="fechaInicio">Fecha de Inicio:</label>
+        <input type="date" id="fechaInicio" required>
+        <button type="submit">Validar</button>
+    </form>
+
+    <script>
+        function validarFecha() {
+            var fechaIngresada = new Date(document.getElementById('fechaInicio').value);
+
+            if (isNaN(fechaIngresada.getTime())) {
+                alert("Por favor, ingrese una fecha de inicio de evento válida.");
+                return false;
+            }
+
+            alert("La fecha de inicio de evento ingresada es: " + fechaIngresada.toDateString());
+            return true;
+        }
+    </script>
+</body>
+</html>
